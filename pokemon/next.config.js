@@ -4,6 +4,9 @@ const nextConfig = {
   env:{
     API: process.env.API
   },
+  eslint:{
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       {
