@@ -62,6 +62,10 @@ export default function Home() {
     setPokemons([])
      getDataPokemon();
   }, [])
+
+  const upperCase = (word) =>{
+    return  word.charAt(0).toUpperCase() + word.slice(1);
+}
   
   return (
     <div style={{minWidth:360}} className="w-screen overflow-y-auto overflow-x-auto h-screen bg-[url('/images/mainBg.png')] bg-right-top bg-cover bg-no-repeat xs:p-2 p-4 text-xs">
@@ -72,10 +76,10 @@ export default function Home() {
             <Link href={`/detail/${pokemon.name}`} id={key} className={` m-4 xs:my-2 xs:mx-1 sm:mx-4 ${bgColor[pokemon.types[0]]} lg:w-2/12 md:w-3/12 sm:w-5/12 xs:w-5/12 h-[150px] rounded-xl text-white`}>
               <div className="w-full h-full flex bg-[url('/images/bgChild.png')] bg-cover bg-top">
               <div className="w-6/12 break-words h-full p-2">
-                <p className="sm:text-xs md:text-base font-bold text-center mb-2">{pokemon.name}</p>
+                <p className="sm:text-xs md:text-base font-bold text-center mb-2">{upperCase(pokemon.name)}</p>
                 {
                   pokemon.types.map((type, tKey) => (
-                    <p id={tKey} className="rounded-xl bg-white bg-opacity-40 p-1 text-center mb-2">{type}</p>
+                    <p id={tKey} className="rounded-xl bg-white bg-opacity-40 p-1 text-center mb-2">{upperCase(type)}</p>
                   ))
                 }
               </div>
